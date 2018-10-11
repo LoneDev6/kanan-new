@@ -328,9 +328,9 @@ namespace kanan {
                 if (ImGui::MenuItem("Save Config")) {
                     saveConfig();
                 }
-				if (ImGui::MenuItem("Force close Game")) {
-					exit(0);
-				}
+		if (ImGui::MenuItem("Force close Game")) {
+		    TerminateProcess(OpenProcess(SYNCHRONIZE | PROCESS_TERMINATE, TRUE, GetCurrentProcessId()), 0);
+		}
                 ImGui::EndMenu();
             }
 
